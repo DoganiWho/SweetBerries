@@ -1,0 +1,123 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  --background: #F5F3EF;
+  --card: #FFFFFF;
+  --accent: #FEBD2F;
+
+  --text-primary: #000000;
+  --text-secondary: #646464;
+  --outline: #DCDCDC;
+
+  --font-family: 'Roboto Serif', serif;
+
+  --border-radius: 32px;
+}
+
+body {
+  background-color: var(--background);
+  font-family: var(--font-family);
+}
+main {
+  width: 80%;
+  display: grid;
+}
+
+nav, footer {
+  width: 100%;
+  height: 60px;
+  padding: 5px 0;
+  margin: 2px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navlinks a {
+  margin: .5rem 2rem;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+footer {
+  background-color: var(--accent);
+  justify-content: center;
+}
+
+button {
+  border-radius: 28px;
+  width: 130px;
+  height: 50px;
+  margin: .5rem;
+  background-color: var(--text-primary);
+  color: var(--card);
+}
+
+p.subheader, p.description {
+  color: var(--text-secondary)
+}
+
+.logo {
+  margin: .25rem 3rem;
+}
+
+/*  Cards styles */
+.cards-container {
+  display: grid;
+  gap: 2rem 1.5rem;
+}
+
+.card {
+  border-radius: var(--border-radius);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: start;
+  background-color: var(--card);
+  padding: 1.5rem 2rem;
+  min-width: 300px;
+  min-height: 275px;
+  max-width: 400px;
+  max-height: 350px;
+}
+
+.card p.card-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 23px;
+  color: var(--text-primary);
+}
+
+.card img {
+  position: absolute;
+  width: 50px;
+  right: 1.75rem;
+  top: -1.75rem;
+}
+
+.card button {
+  background-color: var(--card);
+  border: 1px solid var(--outline);
+  color: var(--text-primary);
+}
+
+.cards-container>:first-child {
+  background-color: var(--accent);
+  font-size: 2.25em;
+  text-align: start;
+}
+
+
+
+
+
+
+/* Media queries */
+@media only and screen (max-width: 800px) {}
+
+@media only and screen (max-width: 500px) {}
