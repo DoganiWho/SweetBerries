@@ -21,11 +21,8 @@ body {
   background-color: var(--background);
   font-family: var(--font-family);
 }
-main {
-  width: 80%;
-  display: grid;
-}
 
+/*
 nav, footer {
   width: 100%;
   height: 60px;
@@ -48,6 +45,12 @@ footer {
   justify-content: center;
 }
 
+main {
+  width: 80%;
+}
+*/
+/* Component stylings */
+/*
 button {
   border-radius: 28px;
   width: 130px;
@@ -64,13 +67,10 @@ p.subheader, p.description {
 .logo {
   margin: .25rem 3rem;
 }
+*/
 
 /*  Cards styles */
-.cards-container {
-  display: grid;
-  gap: 2rem 1.5rem;
-}
-
+/*
 .card {
   border-radius: var(--border-radius);
   position: relative;
@@ -115,7 +115,7 @@ p.subheader, p.description {
 
 
 
-
+*/
 
 /* Media queries */
 @media only and screen (max-width: 800px) {}
