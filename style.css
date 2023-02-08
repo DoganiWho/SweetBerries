@@ -32,13 +32,32 @@ body {
 }
 
 main {
-  background-color: aquamarine;
-  width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: auto;
-  
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  justify-content: start;
+  justify-items: center;
+  align-content: flex-start;
 }
+
+main .banner-text {
+  border: 1px solid pink;
+  grid-column: 1;
+  grid-row: 1;
+  width: 60%;
+  padding: 20px;
+  margin: 5px;
+}
+
+main #image {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 20px;
+  margin: 5px;
+}
+
+
 
 nav, footer {
   border: 1px green solid;
@@ -50,10 +69,16 @@ nav, footer {
   align-items: center;
 }
 
-.navlinks a {
-  margin-right: 2rem;
+.navlinks a, .logo {
   color: var(--text-primary);
   text-decoration: none;
+  padding: 1rem 1.5rem;
+}
+
+.navlinks a:hover {
+  text-decoration: underline;
+  background-color: var(--accent);
+  border-radius: var(--border-radius);
 }
 
 footer {
@@ -68,6 +93,13 @@ button {
   margin: .5rem;
   background-color: var(--text-primary);
   color: var(--card);
+  border: 1px solid transparent;
+}
+
+button:hover {
+  cursor: pointer;
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
 p.subheader, p.description {
@@ -78,28 +110,18 @@ p.subheader, p.description {
   margin: .25rem 3rem;
 }
 
-section.banner {
-  grid-column: span 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /*  Cards styles */
 .cards-container {
   border: 1px solid red;
-
-  display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
- /* display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit minmax(350px, 1fr));
-  grid-auto-rows: 350px; */
+  grid-column: span 2;
+  grid-row: span 2;
+  
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
 }
 
 .card {
@@ -107,21 +129,22 @@ section.banner {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-content: start;
+  justify-content: start;
+  align-content: center;
   background-color: var(--card);
   padding: 1.5rem 2rem;
-  min-width: 300px;
-  min-height: 275px;
+  text-align: start;
   max-width: 400px;
   max-height: 350px;
 }
 
-.card p.card-header {
+.card .card-header {
   font-size: 1.5em;
   font-weight: bold;
   line-height: 23px;
   color: var(--text-primary);
+
+  margin-bottom: 1rem;
 }
 
 .card img {
@@ -135,6 +158,9 @@ section.banner {
   background-color: var(--card);
   border: 1px solid var(--outline);
   color: var(--text-primary);
+  position: absolute;
+  bottom: 1rem;
+  left: 1.25rem;
 }
 
 .cards-container>:first-child {
