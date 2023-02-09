@@ -1,11 +1,5 @@
 html, body {
-  height: 100%;
-  width: 100%;
-
-}
-
-/* resets */
-* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -42,7 +36,7 @@ main {
 }
 
 main .banner-text {
-  border: 1px solid pink;
+
   grid-column: 1;
   grid-row: 1;
   width: 60%;
@@ -60,7 +54,7 @@ main #image {
 
 
 nav, footer {
-  border: 1px green solid;
+
   width: auto;
   height: 80px;
   display: flex;
@@ -114,7 +108,7 @@ p.subheader, p.description {
 
 /*  Cards styles */
 .cards-container {
-  border: 1px solid red;
+
   grid-column: span 2;
   grid-row: span 2;
   
