@@ -35,18 +35,24 @@ main {
   align-content: flex-start;
 }
 
-main .banner-text {
+.banner {
 
-  grid-column: 1;
+  grid-column: span 2;
   grid-row: 1;
-  width: 60%;
+
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 70%;
   padding: 20px;
   margin: 5px;
 }
 
+.banner-text {
+  margin-right: 2rem;
+}
+
 main #image {
-  grid-column: 2;
-  grid-row: 1;
   padding: 20px;
   margin: 5px;
 }
@@ -168,9 +174,11 @@ p.subheader, p.description {
 
 
 
-/* Media queries 
-@media only and screen (max-width: 800px) {}
+@media only screen and (max-width: 800px) {
+  
+}
 
-@media only and screen (max-width: 500px) {}
+@media only screen and (max-width: 500px) {
+  
+}
 
-*/
