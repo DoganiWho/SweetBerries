@@ -62,8 +62,6 @@ button {
 
 header,
 footer {
-  height: 80px;
-  display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
@@ -247,6 +245,10 @@ nav a:hover {
     display: none;
   }
 
+  h1 {
+    font-size: 2em;
+  }
+
   .banner img {
     width: 95%;
   }
@@ -259,6 +261,7 @@ nav a:hover {
   #card.one {
     aspect-ratio: auto;
     height: 200px;
+    font-size: 2.25em;
     padding: 1rem 2rem;
   }
 
