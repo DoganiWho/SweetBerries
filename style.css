@@ -2,8 +2,7 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
 }
 
 /* Global styles*/
@@ -22,7 +21,7 @@
   --border-radius: 4rem;
 }
 
-html,
+
 body {
   background-color: var(--background);
   font-family: var(--font-family);
@@ -83,11 +82,16 @@ footer img {
   margin: 1rem;
 }
 
-nav a {
+nav #menuToggle {
+  display: none;
+}
+
+.navlink {
   color: var(--text-primary);
   text-decoration: none;
   padding: 1rem 1.5rem;
 }
+
 
 
 
@@ -97,7 +101,6 @@ header button {
   border: none;
   outline: 1px solid transparent;
 }
-
 
 
 /* Banner style */
@@ -184,7 +187,7 @@ h1 {
 /* First card */
 #card.one {
   background-color: var(--accent);
-  font-size: clamp(1.5em, 2vw, 2.5em);
+  font-size: clamp(2.25em, 4vw, 3.25em);
   padding: 1rem 2rem;
   aspect-ratio: 15/14;
 }
@@ -211,7 +214,7 @@ nav a:hover {
     justify-content: space-evenly;
   }
 
-  nav a{
+  .navlink {
     padding: 1rem .75rem;
   }
   
@@ -241,13 +244,136 @@ nav a:hover {
   }
 
   header button,
-  header nav a {
+  .navlink {
     display: none;
   }
 
   h1 {
     font-size: 2em;
   }
+
+/* Hamburger menu inspired by Erik Terwan: https://codepen.io/erikterwan/pen/EVzeRP */
+
+header #menuToggle {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  left: 5%;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: var(--text-primary);
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: var(--accent);
+}
+
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 2; 
+  
+  -webkit-touch-callout: none;
+}
+
+/* Hamburger Icon */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: var(--text-primary);
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: var(--text-primary);
+}
+
+/* Hide the middle one. */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/* Last one should go the other direction */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/* Make this absolute positioned at the top left of the screen */
+#menu {
+  position: absolute;
+  width: 100vw;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: var(--background);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 3vw;
+}
+
+/*  Slide animation from the left */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+  /*Hamburger menu end*/
+
+
 
   .banner img {
     width: 95%;
@@ -261,7 +387,6 @@ nav a:hover {
   #card.one {
     aspect-ratio: auto;
     height: 200px;
-    font-size: 2.25em;
     padding: 1rem 2rem;
   }
 

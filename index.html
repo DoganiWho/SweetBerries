@@ -14,9 +14,21 @@
 
 <body>
   <header class="flex">
-    <nav>
-      <a href="#">Courses</a>
-      <a href="#">About us</a>
+    <nav role="navigation">
+      <a class="navlink" href="#">Courses</a>
+      <a class="navlink" href="#">About us</a>
+      <div id="menuToggle"> <!-- Hamburger menu inspired by Erik Terwan: https://codepen.io/erikterwan/pen/EVzeRP -->
+        <input type="checkbox" />
+
+        <span></span>
+        <span></span>
+        <span></span>
+        
+        <ul id="menu">
+          <a href="#"><li>About us</li></a>
+          <a href="#"><li>Courses</li></a>
+        </ul>
+      </div>
     </nav>
     <img class="logo" src="./assets/Sweet Berries Cooking School/Logo.svg" alt="Sweet Berries Cooking School">
     <button>Get started</button>
